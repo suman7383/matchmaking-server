@@ -20,6 +20,10 @@ export default class Queue {
     return this.queue.shift();
   }
 
+  findAndRemove(id: string) {
+    this.queue = this.queue.filter((player) => player.id !== id);
+  }
+
   hasEnoughPlayers() {
     return this.queue.length >= this.minPlayers;
   }

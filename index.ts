@@ -25,6 +25,7 @@ async function main() {
 
     socket.on("disconnect", () => {
       console.log(`Scoket ${socket.id} disconnected!`);
+      queue.findAndRemove(socket.id);
     });
   });
 
